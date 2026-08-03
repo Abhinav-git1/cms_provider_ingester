@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: ankane/pgvector:latest
+    container_name: cms_postgres
+    environment:
+      POSTGRES_USER: cms_user
+      POSTGRES_PASSWORD: cms_pass
+      POSTGRES_DB: cms_provider_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - cms_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "cms_user"]
+      interval: 5s
+      retries: 5
+
+volumes:
+  cms_postgres_data:

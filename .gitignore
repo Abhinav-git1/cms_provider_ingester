@@ -1,0 +1,36 @@
+# Visual Studio local metadata (machine-specific, never share)
+.vs/
+*.vsidx
+*.suo
+*.user
+
+# Environment variables / secrets -- never commit these
+**/.env
+*.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+env/
+venv/
+.venv/
+
+# Database files
+local.db
+*.db
+
+# Project user files
+*.pyproj.user
+obj/
+bin/
+
+# Hugging Face / model cache
+.cache/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Misc leftover files
+New Text Document.txt
